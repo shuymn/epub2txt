@@ -1,2 +1,9 @@
 # epub2txt
-Pure Go implementation of converting epub to txt.
+
+CLI application to convert epub to txt.
+
+# Installation
+
+```bash
+go install github.com/shuymn/epub2txt@latest
+```
