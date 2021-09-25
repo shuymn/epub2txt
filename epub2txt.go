@@ -85,12 +85,18 @@ func convert(book *epub.Book, nps []epub.NavPoint, w io.Writer) error {
 		if err != nil {
 			return err
 		}
+
 		// write to txt file
-		w.Write([]byte(txt))
+		_, err = w.Write([]byte(txt))
+		if err != nil {
+			return err
+		}
 
 		// convert recursively
 		if len(np.Points) > 0 {
-			convert(book, np.Points, w)
+			if err = convert(book, np.Points, w); err != nil {
+				return err
+			}
 		}
 	}
 	return nil
