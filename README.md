@@ -1,6 +1,6 @@
 # epub2txt
 
-Converting epub to txt written in Go.
+CLI application to convert epub to txt.
 
 # Installation
 
